@@ -39,7 +39,7 @@ Route::post('/service/store', [ServiceController::class,'store']);
 Route::get('/service/{service}/edit', [ServiceController::class,'edit']);
 
 Route::get('/users', [UserController::class,'index']);
-Route::get('/user/create', [UserController::class,'create']);
+Route::get('/register', [registerController::class,'create']);
 Route::put('/user/{user}', [UserController::class,'update']);
 Route::get('/user/{user}',[UserController::class,'show']);
 Route::post('/user/store', [UserController::class,'store']);
@@ -47,3 +47,11 @@ Route::get('/user/{user}/edit', [UserController::class,'edit']);
 
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
